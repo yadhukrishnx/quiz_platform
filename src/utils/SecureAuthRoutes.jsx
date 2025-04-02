@@ -22,8 +22,7 @@ const SecureAuthRoutes = () => {
     return <LoadingSpinner />; // Show a loading spinner while checking auth state
   }
 
-  return user ? <Outlet /> : <Navigate to="/dashboard
-  " replace />;
+  return user ? <Outlet /> : <Navigate to="/" replace />;
 };
 
 export default SecureAuthRoutes;

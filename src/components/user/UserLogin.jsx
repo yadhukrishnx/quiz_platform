@@ -7,14 +7,17 @@ const UserLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const [message, setMessage] = useState('');
   const navigate = useNavigate(); 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    setError(null); // Clear previous errors
+    setError(null); 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert('Signed in successfully');
-      navigate("/dashboard");
+      setMessage('Signed in successfully');
+      setTimeout(() => {
+        navigate('/dashboard');
+      },2000);
     } catch (error) {
       setError(error.message);
     }
@@ -25,6 +28,7 @@ const UserLogin = () => {
       <h2 className="text-2xl font-bold mb-4">Sign In</h2>
       <form onSubmit={handleSignIn} className="w-full max-w-sm bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
         {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+        {message && <p className="text-green-500 text-sm mb-2">{message}</p>}
         <div className="mb-4">
           <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
           <input

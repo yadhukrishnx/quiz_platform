@@ -10,18 +10,14 @@ const Dashboard = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUsername(currentUser.email.split('@')[0] || 'User'); // Use Firebase display name if available
-      } else {
-        navigate('/');
-      }
+      setUsername(currentUser.email.split('@')[0] || 'User'); 
     });
     return () => unsubscribe();
   }, [navigate]);
 
   const handleLogout = async () => {
     await signOut(auth);
-    navigate('/'); // Redirect to login after logout
+    navigate('/'); 
   };
 
   return (

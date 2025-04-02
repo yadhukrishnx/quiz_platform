@@ -3,18 +3,13 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import SecureAuthRoutes from "./utils/SecureAuthRoutes"; // Auth Middleware
 import NotFound from "./pages/NotFound"; // 404 Page
 import LoadingSpinner from "./components/LoadingSpinner"; // Loader Component
+import UserLogin from "./components/user/UserLogin";
 import './App.css';
 
 
 
 // Lazy load components for efficiency
 const UserSignup = React.lazy(() => import("./components/user/UserSignup"));
-const UserLogin = React.lazy(() => import("./components/user/UserLogin"));
-
-
-// Admin Pages
-
-
 
 // User Pages
 const Dashboard = React.lazy(() => import("./components/user/Dashboard"));
