@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import SecureAuthRoutes from "/utils/SecureAuthRoutes"; // Auth Middleware
-import NotFound from "/pages/NotFound"; // 404 Page
-import LoadingSpinner from "/components/shared/LoadingSpinner"; // Loader Component
+import SecureAuthRoutes from "./utils/SecureAuthRoutes"; // Auth Middleware
+import NotFound from "./pages/NotFound"; // 404 Page
+import LoadingSpinner from "./components/LoadingSpinner"; // Loader Component
 import './App.css';
 
 
