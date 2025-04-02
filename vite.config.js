@@ -14,6 +14,12 @@ export default defineConfig({
   variants: {
     extend: {},
   },
+   "routes": [
+    {
+      "src": "/(.*)",
+      "destination": "/"
+    }
+  ]
 })
 
 
